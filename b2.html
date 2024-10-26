@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Flask App{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>
+        Numberplate detection System
+    </h1>
+    <div class="navbar">
+        <a href="/" class="{% if request.endpoint == 'home' %}active{% endif %}">Main</a>
+        <a href="/Upload" class="{% if request.endpoint == 'Upload' %}active{% endif %}">Upload</a>
+        <a href="/find_numberplate" class="{% if request.endpoint == 'find_numberplate' %}active{% endif %}">Find Numberplate</a>
+        <a href="/logout" class="{% if request.endpoint == 'logout' %}active{% endif %}">logout</a>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

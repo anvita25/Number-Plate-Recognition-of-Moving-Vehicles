@@ -1,0 +1,18 @@
+{% extends "b2.html" %}
+
+{% block title %}Find Numberplate{% endblock %}
+
+{% block content %}
+<h1>Find Numberplate</h1>
+<form action="/find_numberplate" method="post">
+    <label for="numberplate">Enter Numberplate:</label>
+    <input type="text" id="numberplate" name="numberplate" required>
+    <input type="submit" value="Find">
+</form>
+
+{% if image %}
+    <h2>Most Suitable Image:</h2>
+    <img src="{{ url_for('static', filename='output_frames/' ~ image) }}" alt="Numberplate Image">
+{% endif %}
+
+{% endblock %}

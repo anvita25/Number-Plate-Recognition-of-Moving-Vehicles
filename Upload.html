@@ -1,0 +1,11 @@
+{% extends "b2.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+<h1>Upload Video for Processing</h1>
+<form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="video/*">
+    <input type="submit" value="Upload">
+</form>
+{% endblock %}

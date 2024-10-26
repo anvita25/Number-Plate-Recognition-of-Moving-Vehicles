@@ -1,0 +1,7 @@
+Flask
+opencv-python
+pytesseract
+werkzeug
+numpy
+mysql-connector-python
+python-Levenshtein

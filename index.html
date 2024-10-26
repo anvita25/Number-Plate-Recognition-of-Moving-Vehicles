@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Live Video Stream</title>
+</head>
+<body>
+    <h1>Live Video Stream</h1>
+    <img src="{{ url_for('video_feed') }}" width="800">
+    <h2>Saved Frames</h2>
+    <ul>
+        {% for frame, text in frames_with_strings.items() %}
+        <li><a href="{{ url_for('saved_frames', filename=frame) }}">{{ text }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload_page') }}">Upload another video</a>
+</body>
+</html>

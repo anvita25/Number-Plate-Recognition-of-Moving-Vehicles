@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Numberplate{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>
+        Numberplate detection System
+    </h1>
+    <div class="navbar">
+        <a href="/" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a>
+        <a href="/login" class="{% if request.endpoint == 'login' %}active{% endif %}">Login</a>
+        <a href="/register" class="{% if request.endpoint == 'register' %}active{% endif %}">Register</a>
+    </div>
+    <div class="container"><center>
+        {% block content %}{% endblock %}</center>
+    </div>
+</body>
+</html>
